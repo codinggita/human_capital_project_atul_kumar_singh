@@ -12,6 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 const priceRoutes = require('./routes/priceRoutes');
 const statsRoutes = require('./routes/statsRoutes');
 const searchRoutes = require('./routes/searchRoutes');
+const authRoutes = require('./routes/authRoutes');
+const jwtRoutes = require('./routes/jwtRoutes');
 
 // Health Check Route
 app.get('/api/v1/health', (req, res) => {
@@ -31,6 +33,8 @@ app.get('/', (req, res) => {
 app.use('/api/v1', priceRoutes);
 app.use('/api/v1/stats', statsRoutes);
 app.use('/api/v1/search', searchRoutes);
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/jwt', jwtRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
