@@ -14,6 +14,8 @@ const statsRoutes = require('./routes/statsRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 const authRoutes = require('./routes/authRoutes');
 const jwtRoutes = require('./routes/jwtRoutes');
+const compareRoutes = require('./routes/compareRoutes');
+const advancedRoutes = require('./routes/advancedRoutes');
 
 // Health Check Route
 app.get('/api/v1/health', (req, res) => {
@@ -35,6 +37,8 @@ app.use('/api/v1/stats', statsRoutes);
 app.use('/api/v1/search', searchRoutes);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/jwt', jwtRoutes);
+app.use('/api/v1/compare', compareRoutes);
+app.use('/api/v1', advancedRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
