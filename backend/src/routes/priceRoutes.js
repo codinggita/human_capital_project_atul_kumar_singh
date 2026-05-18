@@ -23,16 +23,20 @@ router.get('/prices/value/:value', priceController.getPricesByValue);
 router.get('/prices/frequency/:freq', priceController.getPricesByFreq);
 router.get('/prices/range/:startYear/:endYear', priceController.getPricesByRange);
 
+const { createPriceValidator, updatePriceValidator } = require('../validators/priceValidator');
+const { validate } = require('../middlewares/validate');
+const { deleteLimiter } = require('../middlewares/rateLimiter');
+
 // Base Prices routes
 router.route('/prices')
   .get(priceController.getAllPrices)
-  .post(priceController.createPrice);
+  .post(createPriceValidator, validate, priceController.createPrice);
 
 router.route('/prices/:id')
   .get(priceController.getPriceById)
-  .put(priceController.replacePrice)
-  .patch(priceController.updatePrice)
-  .delete(priceController.deletePrice);
+  .put(updatePriceValidator, validate, priceController.replacePrice)
+  .patch(updatePriceValidator, validate, priceController.updatePrice)
+  .delete(deleteLimiter, priceController.deletePrice);
 
 // Countries routes
 router.route('/countries')
