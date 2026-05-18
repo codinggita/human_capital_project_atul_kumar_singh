@@ -24,6 +24,7 @@ const compareRoutes = require('./routes/compareRoutes');
 const advancedRoutes = require('./routes/advancedRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const protectedRoutes = require('./routes/protectedRoutes');
+const headOptionsRoutes = require('./routes/headOptionsRoutes');
 
 // Health Check Route
 app.get('/api/v1/health', (req, res) => {
@@ -49,6 +50,7 @@ app.use('/api/v1/compare', compareRoutes);
 app.use('/api/v1', advancedRoutes);
 app.use('/api/v1/admin', adminRoutes);
 app.use('/api/v1/protected', protectedRoutes);
+app.use('/api/v1', headOptionsRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
