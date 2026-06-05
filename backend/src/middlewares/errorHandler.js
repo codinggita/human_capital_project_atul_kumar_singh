@@ -1,11 +1,34 @@
 const ApiError = require('../utils/ApiError');
+const mongoose = require('mongoose');
 
 const errorHandler = (err, req, res, next) => {
   let error = err;
 
   if (!(error instanceof ApiError)) {
-    const statusCode = error.statusCode || error instanceof require('mongoose').Error ? 400 : 500;
-    const message = error.message || 'Something went wrong';
+    let statusCode = 500;
+    let message = error.message || 'Something went wrong';
+
+    // Mongoose validation errors
+    if (error instanceof mongoose.Error.ValidationError) {
+      statusCode = 400;
+      message = 'Validation Error';
+    }
+    // Mongoose cast errors (bad ObjectId)
+    if (error instanceof mongoose.Error.CastError) {
+      statusCode = 400;
+      message = `Invalid ${error.path}: ${error.value}`;
+    }
+    // Mongoose duplicate key errors
+    if (error.code === 11000) {
+      statusCode = 409;
+      const field = Object.keys(error.keyValue);
+      message = `Duplicate field value: ${field}. Please use another value`;
+    }
+
+    if (error.statusCode) {
+      statusCode = error.statusCode;
+    }
+
     error = new ApiError(statusCode, message, error?.errors || [], err.stack);
   }
 
