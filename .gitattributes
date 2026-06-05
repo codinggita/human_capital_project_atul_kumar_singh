@@ -1,0 +1,2 @@
+# Mark auto-generated files so they collapse in GitHub PR diffs
+frontend/package-lock.json linguist-generated=true
