@@ -1,0 +1,1 @@
+export default function Prices() { return <div className="table-container"><table className="table"><thead><tr><th>Country</th><th>Price</th></tr></thead><tbody><tr><td>USA</td><td>$100</td></tr></tbody></table></div>; }
