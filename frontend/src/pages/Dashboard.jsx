@@ -1,0 +1,1 @@
+export default function Dashboard() { return <div className="grid grid-cols-3"><div className="card">Stats</div></div>; }
