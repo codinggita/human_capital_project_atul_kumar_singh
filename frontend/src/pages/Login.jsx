@@ -1,0 +1,1 @@
+export default function Login() { return <div className="card"><form><input className="form-control" /></form></div>; }
