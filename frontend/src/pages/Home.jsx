@@ -1,0 +1,1 @@
+export default function Home() { return <div><h1 className="mesh-gradient-bg">Human Capital Insights</h1></div>; }

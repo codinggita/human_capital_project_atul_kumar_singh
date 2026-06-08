@@ -1,0 +1,1 @@
+export default function Topbar() { return <header className="topbar"><span>API Status: Online</span></header>; }

@@ -1,0 +1,1 @@
+export const api = { getPrices: () => fetch('/api/v1/prices').then(r => r.json()) };

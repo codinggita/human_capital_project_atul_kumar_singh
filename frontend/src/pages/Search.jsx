@@ -1,0 +1,1 @@
+export default function Search() { return <div><input className="form-control" placeholder="Search..." /></div>; }
