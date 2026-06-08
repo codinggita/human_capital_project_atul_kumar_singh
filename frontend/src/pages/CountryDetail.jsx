@@ -1,0 +1,1 @@
+export default function CountryDetail() { return <div><h1>Country Details</h1></div>; }
