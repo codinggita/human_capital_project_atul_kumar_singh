@@ -1,0 +1,1 @@
+export default function Sidebar() { return <aside className="sidebar"><div style={{padding: '24px'}}><h2>HC Dashboard</h2></div></aside>; }
