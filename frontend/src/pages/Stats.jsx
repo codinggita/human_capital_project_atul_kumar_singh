@@ -1,0 +1,1 @@
+export default function Stats() { return <div><h1>Global Stats</h1></div>; }
