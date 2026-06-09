@@ -22,19 +22,19 @@ export default function Dashboard() {
       <div className="grid grid-cols-4 mb-8" style={{ marginBottom: '32px' }}>
         <div className="card">
           <span className="text-mono text-muted" style={{ fontSize: '12px' }}>TOTAL RECORDS</span>
-          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.totalCount?.toLocaleString() || 0}</h2>
+          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.totalRecords?.toLocaleString() || 0}</h2>
         </div>
         <div className="card">
           <span className="text-mono text-muted" style={{ fontSize: '12px' }}>AVERAGE PRICE</span>
-          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.average?.toFixed(2) || 0}</h2>
+          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.avgPrice?.toFixed(2) || 0}</h2>
         </div>
         <div className="card">
           <span className="text-mono text-muted" style={{ fontSize: '12px' }}>HIGHEST</span>
-          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.highest?.value || 0}</h2>
+          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.maxPrice?.toFixed(2) || 0}</h2>
         </div>
         <div className="card">
           <span className="text-mono text-muted" style={{ fontSize: '12px' }}>LOWEST</span>
-          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.lowest?.value || 0}</h2>
+          <h2 style={{marginTop: 8, fontSize: '32px'}}>{stats?.minPrice?.toFixed(2) || 0}</h2>
         </div>
       </div>
 

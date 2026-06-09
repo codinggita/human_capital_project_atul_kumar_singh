@@ -6,7 +6,8 @@ export default function Sidebar() {
     { path: '/dashboard', label: 'Dashboard' },
     { path: '/prices', label: 'Prices Directory' },
     { path: '/countries', label: 'Countries' },
-    { path: '/stats', label: 'Global Stats' }
+    { path: '/stats', label: 'Global Stats' },
+    { path: '/search', label: 'Search' }
   ];
 
   return (

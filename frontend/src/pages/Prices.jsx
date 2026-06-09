@@ -30,7 +30,7 @@ export default function Prices() {
                 </tr>
               </thead>
               <tbody>
-                {prices?.docs?.map((p, i) => (
+                {prices?.map((p, i) => (
                   <tr key={i}>
                     <td style={{fontWeight: 500}}>{p.countryLabel} <span className="text-muted text-mono text-sm">({p.country})</span></td>
                     <td>{p.indicator}</td>

@@ -6,6 +6,7 @@ import Prices from './pages/Prices';
 import Countries from './pages/Countries';
 import CountryStats from './pages/CountryStats';
 import GlobalStats from './pages/GlobalStats';
+import Search from './pages/Search';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/countries" element={<Countries />} />
           <Route path="/countries/:code" element={<CountryStats />} />
           <Route path="/stats" element={<GlobalStats />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Layout>
     </BrowserRouter>
