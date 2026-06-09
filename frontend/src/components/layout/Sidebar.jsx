@@ -1,1 +1,35 @@
-export default function Sidebar() { return <aside className="sidebar"><div style={{padding: '24px'}}><h2>HC Dashboard</h2></div></aside>; }
+import { NavLink } from 'react-router-dom';
+
+export default function Sidebar() {
+  const links = [
+    { path: '/', label: 'Overview' },
+    { path: '/dashboard', label: 'Dashboard' },
+    { path: '/prices', label: 'Prices Directory' },
+    { path: '/countries', label: 'Countries' },
+    { path: '/stats', label: 'Global Stats' },
+    { path: '/search', label: 'Search' }
+  ];
+
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-header">
+        <span className="mesh-gradient-bg" style={{ fontSize: '16px' }}>Human Capital</span>
+      </div>
+      <nav className="sidebar-nav">
+        {links.map(l => (
+          <NavLink 
+            key={l.path} 
+            to={l.path} 
+            className={({isActive}) => `nav-item ${isActive ? 'active' : ''}`}
+            end={l.path === '/'}
+          >
+            {l.label}
+          </NavLink>
+        ))}
+      </nav>
+      <div style={{ padding: '24px' }}>
+        <div className="badge badge-secondary" style={{ width: '100%', justifyContent: 'center' }}>System Online</div>
+      </div>
+    </aside>
+  );
+}

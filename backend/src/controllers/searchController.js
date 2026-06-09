@@ -4,19 +4,19 @@ const ApiResponse = require('../utils/ApiResponse');
 const ApiError = require('../utils/ApiError');
 
 exports.searchCountry = asyncHandler(async (req, res) => {
-  const { name } = req.query;
+  const { name, ...queryString } = req.query;
   if (!name) throw new ApiError(400, 'Please provide a name query parameter');
   
-  const results = await searchService.searchCountry(name, req.query);
+  const results = await searchService.searchCountry(name, queryString);
   
   res.status(200).json(new ApiResponse(200, results, `Found results for country search: ${name}`));
 });
 
 exports.searchIndicator = asyncHandler(async (req, res) => {
-  const { text } = req.query;
+  const { text, ...queryString } = req.query;
   if (!text) throw new ApiError(400, 'Please provide a text query parameter');
 
-  const results = await searchService.searchIndicator(text, req.query);
+  const results = await searchService.searchIndicator(text, queryString);
   
   res.status(200).json(new ApiResponse(200, results, `Found results for indicator search: ${text}`));
 });
@@ -49,19 +49,19 @@ exports.searchYear = asyncHandler(async (req, res) => {
 });
 
 exports.searchFrequency = asyncHandler(async (req, res) => {
-  const { freq } = req.query;
+  const { freq, ...queryString } = req.query;
   if (!freq) throw new ApiError(400, 'Please provide a freq query parameter');
 
-  const results = await searchService.searchFrequency(freq, req.query);
+  const results = await searchService.searchFrequency(freq, queryString);
   
   res.status(200).json(new ApiResponse(200, results, `Found results for frequency search: ${freq}`));
 });
 
 exports.searchPrices = asyncHandler(async (req, res) => {
-  const { q } = req.query;
+  const { q, ...queryString } = req.query;
   if (!q) throw new ApiError(400, 'Please provide a q query parameter');
 
-  const results = await searchService.searchPrices(q, req.query);
+  const results = await searchService.searchPrices(q, queryString);
   
   res.status(200).json(new ApiResponse(200, results, `Found results for prices search: ${q}`));
 });

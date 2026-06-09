@@ -1,16 +1,14 @@
 import { useFetch } from '../hooks/useFetch';
 import { api } from '../services/api';
+import { Link } from 'react-router-dom';
 
-export default function Prices() {
-  const { data: prices, loading } = useFetch(api.getPrices);
+export default function Countries() {
+  const { data: countries, loading } = useFetch(api.getCountries);
 
   return (
     <div className="fade-in">
-      <div className="flex items-center justify-between mb-8" style={{ marginBottom: '32px' }}>
-        <h2>Prices Directory</h2>
-        <button className="btn btn-secondary">Export CSV</button>
-      </div>
-
+      <h2 className="mb-8">Global Countries</h2>
+      
       <div className="card p-0" style={{ padding: 0 }}>
         {loading ? (
           <div style={{padding: 24}}>
@@ -23,19 +21,19 @@ export default function Prices() {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Country</th>
-                  <th>Indicator</th>
-                  <th>Year/Month</th>
-                  <th>Value</th>
+                  <th style={{ width: '100px' }}>Code</th>
+                  <th>Name</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {prices?.map((p, i) => (
+                {countries?.map((c, i) => (
                   <tr key={i}>
-                    <td style={{fontWeight: 500}}>{p.countryLabel} <span className="text-muted text-mono text-sm">({p.country})</span></td>
-                    <td>{p.indicator}</td>
-                    <td>{p.year} - {p.month}</td>
-                    <td style={{fontFamily: 'var(--font-mono)'}}>{p.value}</td>
+                    <td className="text-mono text-muted">{c.code}</td>
+                    <td style={{fontWeight: 500}}>{c.name}</td>
+                    <td>
+                      <Link to={`/countries/${c.code}`} className="btn btn-secondary" style={{ padding: '4px 12px', fontSize: 12 }}>View Stats</Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
