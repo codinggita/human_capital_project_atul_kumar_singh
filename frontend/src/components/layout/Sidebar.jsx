@@ -28,7 +28,7 @@ export default function Sidebar() {
         ))}
       </nav>
       <div style={{ padding: '24px' }}>
-        <div className="badge badge-secondary" style={{ width: '100%', justifyContent: 'center' }}>API Online</div>
+        <div className="badge badge-secondary" style={{ width: '100%', justifyContent: 'center' }}>System Online</div>
       </div>
     </aside>
   );

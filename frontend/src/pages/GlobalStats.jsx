@@ -34,7 +34,7 @@ export default function GlobalStats() {
         </div>
         
         <div className="card card-lg">
-          <h3 className="mb-4">API Metrics</h3>
+          <h3 className="mb-4">System Metrics</h3>
           <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <li style={{ display: 'flex', justifyContent: 'space-between', padding: '16px', backgroundColor: 'var(--color-bg)', borderRadius: 'var(--radius-sm)' }}>
               <span className="text-muted">Status</span>

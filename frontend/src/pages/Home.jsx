@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="fade-in" style={{ padding: 'var(--spacing-5xl) var(--spacing-lg)', textAlign: 'center', maxWidth: 900, margin: '0 auto' }}>
       <div className="badge badge-secondary mb-8" style={{ padding: 'var(--spacing-xs) var(--spacing-sm)' }}>
-        Introducing the API Cloud
+        Introducing Human Capital
       </div>
       <h1 className="mesh-gradient-bg" style={{ 
         fontSize: '48px', 
@@ -14,7 +14,7 @@ export default function Home() {
         lineHeight: '48px',
         textWrap: 'balance'
       }}>
-        Build and deploy on the Data Cloud.
+        Analyze and explore the Data Platform.
       </h1>
       <p style={{ 
         fontSize: '18px', 
@@ -41,8 +41,8 @@ export default function Home() {
           <p className="text-sm">Deep dive into multi-year trends with beautiful, responsive charts.</p>
         </div>
         <div className="card">
-          <h4 className="text-mono" style={{color: 'var(--color-text-primary)', marginBottom: '8px'}}>API First.</h4>
-          <p className="text-sm">Built on a robust Node.js backend. Connect your apps in seconds.</p>
+          <h4 className="text-mono" style={{color: 'var(--color-text-primary)', marginBottom: '8px'}}>Data First.</h4>
+          <p className="text-sm">Built on a robust data platform. Access insights in seconds.</p>
         </div>
       </div>
     </div>
