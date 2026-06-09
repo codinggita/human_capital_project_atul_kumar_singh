@@ -8,7 +8,14 @@ export default function Topbar() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && query.trim()) {
       navigate(`/search?q=${encodeURIComponent(query.trim())}`);
-      setQuery('');
+    }
+  };
+
+  const handleChange = (e) => {
+    const val = e.target.value;
+    setQuery(val);
+    if (val.trim()) {
+      navigate(`/search?q=${encodeURIComponent(val.trim())}`);
     }
   };
 
@@ -19,12 +26,12 @@ export default function Topbar() {
           type="text" 
           name="globalSearch"
           className="form-control" 
-          placeholder="Search country, prices (Press Enter)..." 
+          placeholder="Search country, prices..." 
           value={query}
           aria-label="Search"
           autoComplete="off"
           spellCheck={false}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
       </div>

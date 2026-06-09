@@ -1,22 +1,101 @@
 # Human Capital Project
 
-Backend API for the Human Capital project, built with Node.js, Express, and MongoDB.
+Welcome to the **Human Capital** project! This repository contains a full-stack web application designed to analyze, visualize, and manage comprehensive human capital datasets (containing 190k+ records). The application is split into a **Frontend** (React + Vite) and a **Backend** (Node.js + Express + MongoDB).
 
-## Getting Started
+## 📁 Repository Structure
 
-1.  Clone the repository.
-2.  Install dependencies: `npm install`
-3.  Copy `.env.example` to `.env` and configure your MongoDB URI.
-4.  Run the development server: `npm run dev`
+This repository strictly contains only the following components:
 
-## Dataset
+- `frontend/` - The React application built with Vite and Recharts.
+- `backend/` - The Node.js and Express RESTful API.
+- `README.md` - This file.
 
-The original dataset is available [here](https://drive.google.com/file/d/11qaP8A5QpJF7s-wBF0tpAt9GG5rsj35-/view?usp=drive_link). It's a ~48MB JSON file containing 190k+ records.
+---
 
-*Note: Please do not commit `human_capital_project.json` or any large dataset files directly to this repository.*
+## 🎨 Frontend
 
-## API Endpoints
+The frontend is a modern, responsive, and highly visual dashboard built to provide insights into human capital trends, statistics, and analytics.
 
--   `GET /api/v1/health` - Health check
+### Technologies Used
+- **React 19**: Component-based UI library.
+- **Vite**: Ultra-fast build tool and development server.
+- **React Router DOM**: Client-side routing for seamless navigation.
+- **Recharts**: For rendering dynamic and interactive data visualizations.
+- **CSS Variables**: For an elegant design system and dark theme implementation.
 
-More endpoints will be documented as they are implemented.
+### Features
+- **Analytics Dashboard**: Interactive charts and statistics for visualizing human capital data.
+- **Data Binding & Real-time Search**: Debounced API queries for real-time search functionality.
+- **Responsive Layout**: Modern, sleek dark mode UI with a fully accessible navigation shell.
+
+### Getting Started (Frontend)
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## ⚙️ Backend
+
+The backend provides a robust and secure RESTful API that serves the frontend with data from a massive dataset.
+
+### Technologies Used
+- **Node.js & Express 5**: Server runtime and web framework.
+- **MongoDB & Mongoose**: NoSQL database and Object Data Modeling (ODM).
+- **JWT (JSON Web Tokens)**: For secure authentication and authorization.
+- **Bcrypt.js**: For password hashing.
+- **Express Validator**: For robust API payload validation.
+- **Express Rate Limit**: To prevent brute-force attacks and manage API traffic.
+
+### API Endpoints
+The backend exposes multiple endpoints including, but not limited to:
+- `GET /api/v1/health` - System health check.
+- **Analytics & Trends**: Endpoints to fetch global stats, price trends, and data comparisons.
+- **Search API**: Optimized endpoints for querying human capital metrics.
+- **Authentication**: User login, registration, and session management.
+
+*Note: The original dataset is ~48MB containing over 190,000 records. Please ensure MongoDB is properly configured before running the backend.*
+
+### Getting Started (Backend)
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure Environment Variables:
+   - Copy `.env.example` to `.env` (if provided) or create a `.env` file.
+   - Set your `MONGO_URI`, `JWT_SECRET`, and `PORT`.
+4. Run the development server (uses nodemon):
+   ```bash
+   npm run dev
+   ```
+5. Run in production mode:
+   ```bash
+   npm start
+   ```
+
+---
+
+## 🚀 Deployment
+
+- **Frontend**: Configured for seamless deployment on platforms like Vercel or Netlify.
+- **Backend**: Configured for seamless deployment on platforms like Render or Heroku.
+
+## 📄 License
+This project is licensed under the ISC License.
