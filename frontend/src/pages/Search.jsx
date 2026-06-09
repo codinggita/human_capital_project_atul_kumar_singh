@@ -8,6 +8,13 @@ export default function Search() {
   const initialQuery = searchParams.get('q') || '';
   const [query, setQuery] = useState(initialQuery);
   const [activeTab, setActiveTab] = useState('prices');
+
+  useEffect(() => {
+    const q = searchParams.get('q');
+    if (q !== null && q !== query) {
+      setQuery(q);
+    }
+  }, [searchParams]);
   
   // Create a deferred query to avoid spamming the API on every keystroke
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
